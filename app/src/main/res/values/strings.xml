@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RTSlab3.2</string>
+    <string name="iterations_deadline">Iterations deadline:</string>
+    <string name="start">Start</string>
+</resources>
