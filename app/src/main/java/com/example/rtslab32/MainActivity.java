@@ -36,9 +36,10 @@ public class MainActivity extends AppCompatActivity {
         boolean completed = false;
         long start = System.nanoTime();
 
+        int iteration=0;
         int index = 0;
         while (iterations++ < iterationsDeadline && (System.nanoTime() - start) < timeDeadline) {
-
+            iteration++;
             index %= 4;
 
             y = points[index][0] * w1 + points[index][1] * w2;
@@ -57,11 +58,13 @@ public class MainActivity extends AppCompatActivity {
         TextView textViewW1 = findViewById(R.id.lab32W1);
         TextView textViewW2 = findViewById(R.id.lab32W2);
         TextView textViewIterations = findViewById(R.id.lab32Iterations);
+        TextView textViewIterationNumber = findViewById(R.id.textViewIterationNumber);
 
         if (completed) {
             textViewW1.setText(String.format("w1 = %-6.3f = ", w1));
             textViewW2.setText(String.format("w2 = %-6.3f = ", w2));
             textViewIterations.setText("Iterations: " + iterations);
+            textViewIterationNumber.setText("Number of iterations: " + iteration);
 
         } else {
             String result = "\tFailed to train model for specified deadline!";
